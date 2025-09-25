@@ -21,13 +21,13 @@ router.get("/", (req, res) => {
     <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem;">
       ${list}
     </div>
-  ` + siteFooter());
+  `);
 });
 
 // Detail page
 router.get("/guides/:slug", (req, res) => {
   const guide = guides.find(g => g.slug === req.params.slug);
-  if (!guide) return res.status(404).send(siteHeader("404") + "<h1>Not Found</h1>" + siteFooter());
+  if (!guide) return res.status(404).send(siteHeader("404") + "<h1> 404 Not Found</h1>");
   res.send(generateGuidePage(guide));
 });
 
