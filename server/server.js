@@ -4,6 +4,9 @@ import pageRoutes from "./routes/pages.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import dotenv from 'dotenv'
+dotenv.config({ path: '../.env' })
+
 const app = express();
 const port = process.env.PORT || 3000;
 
